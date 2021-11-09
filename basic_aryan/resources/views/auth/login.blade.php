@@ -60,6 +60,12 @@
                 </a>
               </div>
             </div>
+             @if (session('success'))
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                      <strong>{{ session('success') }}</strong>
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
              <x-jet-validation-errors class="mb-4" />
             <div class="card-body p-5">
                  @if (session('status'))

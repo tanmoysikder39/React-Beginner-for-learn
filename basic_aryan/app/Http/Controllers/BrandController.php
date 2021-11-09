@@ -133,9 +133,6 @@ public function storeImg(Request $request)
 
     foreach( $image as $multi_img){
 
-   
-        
-
         $name_gen =hexdec(uniqid()).'.'.$multi_img->getClientOriginalExtension();
         Image::make( $multi_img)->resize(300,300)->save('image/multi/'.$name_gen);
 
