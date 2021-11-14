@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Harimayco\Menu\Models\Menus;
+use Harimayco\Menu\Models\MenuItems;
 
 class ContactController extends Controller
 {
@@ -88,5 +90,19 @@ class ContactController extends Controller
     public function Deletemsg($id){
         DB::table('contact_forms')->where('id', $id)->delete();
        return Redirect()->route('admin.message')->with('message','message  delete Successfully');
+    }
+
+    public function menu()
+    {
+               $public_menu = Menus::find(1);
+
+
+        return view('admin.contact.menu',compact('public_menu'));
+
+ 
+
+
+
+
     }
 }

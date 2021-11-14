@@ -131,3 +131,6 @@ Route::post('/password/update', [ChangePasswordController::class, 'PasswordUpdat
 //profile update
 Route::get('/admin/profile', [ChangePasswordController::class, 'ProfileUpdate'])->name('profile.update');
 Route::post('/user/profile/update', [ChangePasswordController::class, 'userProfileUpdate'])->name('user.profile.update');
+
+//menu
+Route::get('/admin/menu', [ContactController::class, 'menu'])->name('admin.menu');

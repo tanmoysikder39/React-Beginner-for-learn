@@ -64,8 +64,8 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
-        $old_image = $request->old_image;
-         $slider_image =  $request->file('image');
+            $old_image = $request->old_image;
+            $slider_image =  $request->file('image');
            if( $slider_image){
              $name_gen = hexdec(uniqid());
             $img_ext = strtolower($slider_image->getClientOriginalExtension());
@@ -73,16 +73,12 @@ class HomeController extends Controller
             $up_location = 'image/brand/';
             $last_img = $up_location.$img_name;
             $slider_image->move($up_location,$img_name);
-
         unlink($old_image);
          DB::table('sliders')->where('id', $id)->update([
             'title' => $request->title,
             'description' => $request->description,
-            'image' => $last_img,
-            
+            'image' => $last_img,  
         ]);
-           
-          
            return Redirect()->back()->with('message','slider update Successfully');  
         }else{
            DB::table('sliders')->where('id', $id)->update([
@@ -90,13 +86,9 @@ class HomeController extends Controller
             'description' => $request->description,
             'created_at' => Carbon::now()
         ]);
-           
-          
            return Redirect()->route('home.slider')->with('message','slider update Successfully');
         }
-        
-        
-       
+          
     }
 
     public function Delete(Request $request, $id)

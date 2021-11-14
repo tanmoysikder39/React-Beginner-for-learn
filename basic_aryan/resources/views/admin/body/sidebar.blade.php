@@ -82,7 +82,16 @@
                                
                             </li>
                         </div>
+                         <div class="sub-menu">
+                            <li class="has-sub">
+                                  <a id="myEditor" class="sidenav-item-link sortableLists list-group" href="{{ route('admin.menu') }}">
+                                    <span class="nav-text"> Menu</span>
+                                </a>
+                               
+                            </li>
+                        </div>
                     </ul>
+                   
                 </li>
 
                 <li class="has-sub">

@@ -209,6 +209,7 @@
         <script src="{{ asset('backend') }}/assets/js/date-range.js"></script>
         <script src="{{ asset('backend') }}/assets/js/map.js"></script>
         <script src="{{ asset('backend') }}/assets/js/custom.js"></script>
+
     <script>
   @if(Session::has('message'))
   toastr.options =
@@ -246,5 +247,7 @@
   		toastr.warning("{{ session('warning') }}");
   @endif
 </script>
+
+
     </body>
 </html>

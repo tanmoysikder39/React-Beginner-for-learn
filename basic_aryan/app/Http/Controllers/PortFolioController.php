@@ -13,5 +13,8 @@ class PortFolioController extends Controller
        return view('pages.portfoilo',compact('image'));
     }
 
-    
+    public function menu()
+    {
+        //function_body
+    }
 }
